@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Económico: Perú vs Latinoamérica | World Bank API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <main class="main-container" id="mainContainer">
+        <!-- SLIDE 1: PORTADA -->
+        <section class="slide" id="slide1" data-section="0">
+            <div class="slide-content">
+                <div class="hero-section">
+                    <div class="pattern-bg"></div>
+                    <div class="hero-content">
+                        <h1 class="hero-title">World Bank Open Data API</h1>
+                        <h2 class="hero-subtitle">Análisis Comparativo: Perú vs Latinoamérica</h2>
+                        <div class="hero-period">2015-2023</div>
+                        
+                        <div class="institution-info">
+                            <div class="institution">
+                                <strong>Lenguaje de Programación 2 (2025-2)</strong><br>
+                                Universidad Nacional Agraria La Molina<br>
+                                Departamento de Estadística Informática<br>
+                                <span class="date">Diciembre 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="team-section">
+                            <h3>Equipo de Trabajo (7 integrantes)</h3>
+                            <div class="team-grid">
+                                <div class="team-member">1. Javier Anthony Uraco Silva</div>
+                                <div class="team-member">2. Fiorella Fuentes Bueno</div>
+                                <div class="team-member">3. Kesdine Yasmin Palma Cruz</div>
+                                <div class="team-member">4. Brayan Augusto Flores Villa</div>
+                                <div class="team-member">5. Sebastian Samuel Fernandez Andrade</div>
+                                <div class="team-member">6. Estiven Aldair Mata Sotelo</div>
+                                <div class="team-member">7. Arlette Alashka Carmen Tullume</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: OBJETIVO -->
+        <section class="slide" id="slide2" data-section="1">
+            <div class="slide-content">
+                <!-- Título y pregunta en la misma fila -->
+                <div class="objetivo-header">
+                    <h1 class="slide-title">Objetivo General del Proyecto</h1>
+                    <div class="question-box">
+                        <h2>¿Cómo se comportó la economía peruana versus sus pares latinoamericanos en 9 años incluyendo COVID-19?</h2>
+                    </div>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="left-content">
+                        <div class="objectives-list">
+                            <h3>Objetivos Específicos:</h3>
+                            <ul>
+                                <li>✓ Evaluar desempeño económico de Perú (2015-2023)<br>
+                                    <small>→ Indicadores: PIB, crecimiento, empleo, calidad de vida</small>
+                                </li>
+                                <li>✓ Comparar con 6 países pares latinoamericanos<br>
+                                    <small>→ Colombia, Chile, Argentina, Brasil, México, Ecuador</small>
+                                </li>
+                                <li>✓ Analizar impacto COVID-19 (2020-2021)<br>
+                                    <small>→ Antes, durante y después de la pandemia</small>
+                                </li>
+                                <li>✓ Generar insights macroeconómicos<br>
+                                    <small>→ Fortalezas y debilidades de Perú vs región</small>
+                                </li>
+                                <li>✓ Demostrar uso práctico de API<br>
+                                    <small>→ Extracción, limpieza y análisis de datos reales</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="right-content">
+                        <div class="scope-table">
+                            <h3>Alcance Técnico:</h3>
+                            <div class="scope-item"><strong>Período:</strong> 2015-2023 (9 años continuos)</div>
+                            <div class="scope-item"><strong>Países:</strong> 7 naciones latinoamericanas</div>
+                            <div class="scope-item"><strong>Indicadores:</strong> 8 variables económico-sociales</div>
+                            <div class="scope-item"><strong>Datos:</strong> 504 puntos de datos extraídos</div>
+                            <div class="scope-item"><strong>Fuente:</strong> World Bank Open Data (oficial)</div>
+                            <div class="scope-item"><strong>Lenguaje:</strong> Python 3.8+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: PROBLEMA -->
+        <section class="slide" id="slide3" data-section="2">
+            <div class="slide-content">
+                <h1 class="slide-title centered">¿Por qué necesitamos una API? - 4 Problemas Clave</h1>
+                
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">📊</div>
+                        <h3>Problema 1: Datos Fragmentados</h3>
+                        <ul>
+                            <li>INEI (Perú) incompleto</li>
+                            <li>CEPAL (región) distinto</li>
+                            <li>BCR no todos públicos</li>
+                            <li>Imposible análisis unificado</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">🌐</div>
+                        <h3>Problema 2: Sin Análisis Integrado</h3>
+                        <ul>
+                            <li>No existe comparativa</li>
+                            <li>Difícil saber si Perú "va bien" sin referencia</li>
+                            <li>Benchmark necesario</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">🦠</div>
+                        <h3>Problema 3: COVID-19 Desconocido</h3>
+                        <ul>
+                            <li>¿Fue grave en Perú?</li>
+                            <li>¿Recuperación rápida?</li>
+                            <li>¿Qué indicadores afectó?</li>
+                            <li>Datos no sistematizados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">⚖️</div>
+                        <h3>Problema 4: Sin Reproducibilidad</h3>
+                        <ul>
+                            <li>Decisiones necesitan datos</li>
+                            <li>Método transparente</li>
+                            <li>Fuentes verificables</li>
+                            <li>Replicable en contexto</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="solution-box">
+                    <h2>Solución: World Bank Open Data API</h2>
+                    <div class="solution-points">
+                        <span>✓ Datos oficiales y verificados</span>
+                        <span>✓ Acceso libre sin autenticación</span>
+                        <span>✓ Cobertura regional completa</span>
+                        <span>✓ Método reproducible y transparente</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: PRESENTAR API -->
+        <section class="slide" id="slide4" data-section="3">
+            <div class="slide-content">
+                <h1 class="slide-title">¿Qué es World Bank Open Data API?</h1>
+                
+                <div class="api-definition">
+                    <div class="definition-box">
+                        <h3>Definición</h3>
+                        <p>Servicio web público que proporciona acceso <strong>GRATUITO</strong> a datos económicos, sociales y ambientales de 189 países del mundo.</p>
+                        
+                        <div class="operator-info">
+                            <strong>Operador: 🏦 BANCO MUNDIAL (World Bank)</strong>
+                            <ul>
+                                <li>Fundada: 1944 (organización internacional)</li>
+                                <li>Autoridad: Datos económicos globales certificados</li>
+                                <li>Actualización: Trimestral/Anual según indicador</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-specs-grid">
+                    <div class="specs-section">
+                        <h3>¿Por qué usar esta API?</h3>
+                        <div class="spec-item">
+                            <strong>1. DATOS OFICIALES ✅</strong>
+                            <ul>
+                                <li>Verificados internacionalmente</li>
+                                <li>De institutos nacionales (INEI, IBGE)</li>
+                            </ul>
+                        </div>
+                        <div class="spec-item">
+                            <strong>2. ACCESO LIBRE ✅</strong>
+                            <ul>
+                                <li>Sin costo</li>
+                                <li>Sin registro obligatorio</li>
+                                <li>Cero restricciones</li>
+                            </ul>
+                        </div>
+                        <div class="spec-item">
+                            <strong>3. FORMATO ESTÁNDAR ✅</strong>
+                            <ul>
+                                <li>JSON estructurado</li>
+                                <li>Fácil de procesar</li>
+                                <li>Consistente</li>
+                            </ul>
+                        </div>
+                        <div class="spec-item">
+                            <strong>4. COBERTURA AMPLIA ✅</strong>
+                            <ul>
+                                <li>Todos los países</li>
+                                <li>Datos históricos</li>
+                                <li>Múltiples indicadores</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="specs-section">
+                        <h3>Especificaciones Técnicas</h3>
+                        <div class="tech-specs">
+                            <div class="tech-item"><strong>Formato:</strong> JSON</div>
+                            <div class="tech-item"><strong>Cobertura:</strong> 189 países</div>
+                            <div class="tech-item"><strong>Indicadores:</strong> 1,600+</div>
+                            <div class="tech-item"><strong>Series:</strong> Históricas</div>
+                            <div class="tech-item"><strong>Acceso:</strong> HTTP GET</div>
+                            <div class="tech-item"><strong>Autenticación:</strong> NINGUNA</div>
+                            <div class="tech-item"><strong>Límite:</strong> Hasta 120/minuto</div>
+                        </div>
+
+                        <h4>Ejemplos de Indicadores:</h4>
+                        <div class="indicators-list">
+                            <span>🔹 PIB per cápita (USD)</span>
+                            <span>🔹 Tasa de desempleo (%)</span>
+                            <span>🔹 Esperanza de vida (años)</span>
+                            <span>🔹 Acceso a educación (%)</span>
+                            <span>🔹 Inversión extranjera (USD)</span>
+                            <span>🔹 Remesas recibidas (USD)</span>
+                            <span>🔹 Índice GINI (desigualdad)</span>
+                            <span>🔹 Acceso a internet (%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: CÓMO FUNCIONA (Técnico) -->
+        <section class="slide" id="slide5" data-section="4">
+            <div class="slide-content">
+                <h1 class="slide-title centered">Flujo Técnico: Cómo funciona la API (Paso a paso)</h1>
+                
+                <div class="technical-flow">
+                    <div class="flow-step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>🔨 BUILD - Construir Solicitud HTTP</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="url-example">
+                                <strong>URL Base:</strong><br>
+                                https://api.worldbank.org/v2/
+                                <br><br>
+                                + País: country/PER<br>
+                                + Indicador: indicators/...<br>
+                                + Parámetros: ?date=2015:2023
+                                <br><br>
+                                <strong>RESULTADO FINAL:</strong><br>
+                                https://api.worldbank.org/v2/country/PER/indicators/...?date=2015:2023&format=json
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">↓</div>
+
+                    <div class="flow-step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>🚀 SEND - Enviar Solicitud HTTP GET</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="send-details">
+                                • Método: GET (lectura)<br>
+                                • Destino: Servidores WB<br>
+                                • Tiempo: &lt;1 segundo<br>
+                                • Respuesta: JSON con datos
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">↓</div>
+
+                    <div class="flow-step">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>📨 RECEIVE - Recibir Respuesta JSON</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="json-example">
+                                {<br>
+                                &nbsp;&nbsp;"page": 1,<br>
+                                &nbsp;&nbsp;"pages": 1,<br>
+                                &nbsp;&nbsp;"per_page": 50,<br>
+                                &nbsp;&nbsp;"total": 9,<br>
+                                &nbsp;&nbsp;"data": [<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"date": "2023",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"value": "7887.42"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{...},<br>
+                                &nbsp;&nbsp;]<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-arrow">↓</div>
+
+                    <div class="flow-step">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3>🔍 PROCESS - Procesar & Analizar</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="process-steps">
+                                1. Parsear JSON → Extraer valores<br>
+                                2. Limpiar → Remover nulos<br>
+                                3. Agrupar → Crear DataFrames<br>
+                                4. Analizar → Gráficos & Stats
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-stats">
+                    <h3>Estadística Final Obtenida:</h3>
+                    <div class="stats-highlight">
+                        7 países × 8 indicadores × 9 años = <strong>504 PUNTOS DE DATOS ✅</strong>
+                        <br><br>
+                        ✓ 100% extracción exitosa<br>
+                        ✓ 4.5% datos nulos (imputados)<br>
+                        ✓ Dataset limpio y validado
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: INDICADORES (8 Variables) -->
+        <section class="slide" id="slide6" data-section="5">
+            <div class="slide-content">
+                <h1 class="slide-title centered">8 Indicadores Macroeconómicos Extraídos</h1>
+                
+                <div class="indicators-grid">
+                    <div class="indicator-card">
+                        <div class="indicator-icon">💰</div>
+                        <h3>1. PIB per cápita (NY.GDP.PCAP.CD)</h3>
+                        <p><strong>Unidad:</strong> USD (precios corrientes)</p>
+                        <p><strong>Significado:</strong> Ingreso promedio por habitante</p>
+                        <p><strong>Por qué:</strong> Medir riqueza general de la economía</p>
+                        <p><strong>Rango:</strong> $3,000 - $16,000 en la región</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">📈</div>
+                        <h3>2. Crecimiento del PIB (NY.GDP.MKTP.KD.ZG)</h3>
+                        <p><strong>Unidad:</strong> Porcentaje (%) anual</p>
+                        <p><strong>Significado:</strong> Variación año a año del PIB</p>
+                        <p><strong>Por qué:</strong> Dinamismo y momentum económico</p>
+                        <p><strong>Rango:</strong> -13.2% (2020) a +24.3% (2021)</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">💼</div>
+                        <h3>3. Tasa de Desempleo (SL.UEM.TOTL.ZS)</h3>
+                        <p><strong>Unidad:</strong> Porcentaje (%) de población activa</p>
+                        <p><strong>Significado:</strong> % de personas sin empleo</p>
+                        <p><strong>Por qué:</strong> Salud del mercado laboral</p>
+                        <p><strong>Rango:</strong> 5% - 12% según país</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">❤️</div>
+                        <h3>4. Esperanza de Vida (SP.DYN.LE00.IN)</h3>
+                        <p><strong>Unidad:</strong> Años al nacer</p>
+                        <p><strong>Significado:</strong> Años promedio que vivirá un recién nacido</p>
+                        <p><strong>Por qué:</strong> Indicador de calidad de vida y salud pública</p>
+                        <p><strong>Rango:</strong> 75 - 81 años</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">📚</div>
+                        <h3>5. Alfabetización Adulta (SE.ADT.LITR.ZS)</h3>
+                        <p><strong>Unidad:</strong> Porcentaje (%)</p>
+                        <p><strong>Significado:</strong> % de población que lee y escribe</p>
+                        <p><strong>Por qué:</strong> Desarrollo educativo e inclusión</p>
+                        <p><strong>Rango:</strong> 85% - 99% en Latinoamérica</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">⚖️</div>
+                        <h3>6. Coeficiente GINI (SI.POV.GINI)</h3>
+                        <p><strong>Unidad:</strong> Índice 0-100</p>
+                        <p><strong>Significado:</strong> Desigualdad de ingresos</p>
+                        <p><strong>Por qué:</strong> Medir equidad social (0=perfecta, 100=máxima)</p>
+                        <p><strong>Rango:</strong> 40 - 55 (Latinoamérica muy desigual)</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">🏭</div>
+                        <h3>7. Inversión Extranjera Directa (BX.KLT.DINV.CD.WD)</h3>
+                        <p><strong>Unidad:</strong> USD (millones)</p>
+                        <p><strong>Significado:</strong> Capital externo que entra a la economía</p>
+                        <p><strong>Por qué:</strong> Confianza de inversionistas y dinamismo</p>
+                        <p><strong>Rango:</strong> Varía según país</p>
+                    </div>
+                    
+                    <div class="indicator-card">
+                        <div class="indicator-icon">💸</div>
+                        <h3>8. Remesas Recibidas (BX.TRF.PWKR.CD.DT)</h3>
+                        <p><strong>Unidad:</strong> USD (millones)</p>
+                        <p><strong>Significado:</strong> Dinero enviado por migrantes (desde exterior)</p>
+                        <p><strong>Por qué:</strong> Impacto en economías familiares y pobreza</p>
+                        <p><strong>Rango:</strong> $500M - $5,000M según país</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: PROCESO PYTHON -->
+        <section class="slide" id="slide7" data-section="6">
+            <div class="slide-content">
+                <h1 class="slide-title">Proceso Python: Extracción con API</h1>
+                
+                <div class="python-layout">
+                    <div class="code-section">
+                        <div class="code-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">worldbank_api_extractor.py</span>
+                        </div>
+                        <pre class="code-block"><code>import requests
+import pandas as pd
+import numpy as np
+
+# URLs base
+BASE_URL = 'https://api.worldbank.org/v2'
+COUNTRIES = {
+    'PER': 'Perú', 
+    'COL': 'Colombia', 
+    'CHL': 'Chile',
+    'ARG': 'Argentina',
+    'BRA': 'Brasil',
+    'ECU': 'Ecuador',
+    'BOL': 'Bolivia'
+}
+
+# Función extracción
+def get_world_bank_data(country, indicator):
+    url = f"{BASE_URL}/country/{country}/indicators/{indicator}"
+    params = {
+        'date': '2015:2023', 
+        'format': 'json'
+    }
+    response = requests.get(url, params=params)
+    return response.json()
+
+# Extracción masiva
+for country in COUNTRIES:
+    for indicator in INDICATORS:
+        data = get_world_bank_data(country, indicator)
+        # Procesamiento...
+        processed_data = process_api_response(data)
+
+# DataFrame final
+df = pd.DataFrame(processed_data)
+df.to_csv('data_cleaned.csv', index=False)</code></pre>
+                    </div>
+                    
+                    <div class="explanation-section">
+                        <div class="explanation-block">
+                            <h3>✓ Librerías utilizadas:</h3>
+                            <ul>
+                                <li>requests (conexión HTTP)</li>
+                                <li>pandas (manipulación datos)</li>
+                                <li>numpy (cálculos numéricos)</li>
+                            </ul>
+                        </div>
+
+                        <div class="explanation-block">
+                            <h3>✓ Configuración API:</h3>
+                            <ul>
+                                <li>7 países latinoamericanos</li>
+                                <li>8 indicadores principales</li>
+                                <li>Años: 2015-2023</li>
+                            </ul>
+                        </div>
+
+                        <div class="explanation-block">
+                            <h3>✓ Proceso:</h3>
+                            <ol>
+                                <li>Construcción de URLs dinámicamente</li>
+                                <li>Solicitudes HTTP GET iterativas</li>
+                                <li>Parseo de respuestas JSON</li>
+                                <li>Limpieza y validación</li>
+                                <li>Creación de DataFrame consolidado</li>
+                            </ol>
+                        </div>
+
+                        <div class="stats-section">
+                            <h3>Estadísticas Finales</h3>
+                            <ul>
+                                <li><strong>Total registros:</strong> 504</li>
+                                <li><strong>Filas DataFrame:</strong> 2,016</li>
+                                <li><strong>Columnas:</strong> País, Indicador, Año, Valor</li>
+                                <li><strong>Período:</strong> 2015-2023</li>
+                                <li><strong>Nulos detectados:</strong> 23</li>
+                                <li><strong>Nulos imputados:</strong> 23</li>
+                                <li><strong>Integridad:</strong> 100% ✅</li>
+                            </ul>
+                        </div>
+
+                        <div class="validations-section">
+                            <h3>Validaciones Implementadas:</h3>
+                            <ul>
+                                <li>✓ Rango PIB per cápita: $3,000 - $17,000</li>
+                                <li>✓ Rango Tasa desempleo: 0% - 15%</li>
+                                <li>✓ Rango Esperanza de vida: 70 - 85 años</li>
+                                <li>✓ Rango GINI: 30 - 60</li>
+                                <li>✓ Ceros y negativos: Validados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: PERÚ vs LATINOAMÉRICA -->
+        <section class="slide" id="slide8" data-section="7">
+            <div class="slide-content">
+                <h1 class="slide-title">Comparativa Regional: Perú en Contexto Latinoamericano</h1>
+                
+                <div class="comparison-layout-new">
+                    <div class="comparison-left">
+                        <div class="kpi-highlight">
+                            <h2>PIB per cápita: $7,887</h2>
+                            <p class="position">4° lugar en la región</p>
+                        </div>
+                        
+                        <div class="interpretation">
+                            <h3>Posición de Perú en 2023:</h3>
+                            <div class="ranking-list">
+                                <div class="ranking-item gold">
+                                    <span class="medal">🥇</span>
+                                    <span>1° GINI (Equidad): 40.7 (Mejor distribución)</span>
+                                </div>
+                                <div class="ranking-item silver">
+                                    <span class="medal">🥈</span>
+                                    <span>2° Esperanza de vida: 77.74 años (Tras Chile)</span>
+                                </div>
+                                <div class="ranking-item bronze">
+                                    <span class="medal">🥉</span>
+                                    <span>3° Crecimiento 2015-23: +26.6% acumulado</span>
+                                </div>
+                                <div class="ranking-item warning">
+                                    <span class="medal">⚠️</span>
+                                    <span>4° PIB per cápita: $7,887 (Medio-bajo)</span>
+                                </div>
+                                <div class="ranking-item warning">
+                                    <span class="medal">⚠️</span>
+                                    <span>5° Tasa desempleo: 8.2% (Moderado)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-right">
+                        <div class="chart-container">
+                            <img src="user_input_files/grafico_pbi_peru.png" alt="PBI per capita: Perú vs Latinoamérica (2015-2023)" class="chart-image">
+                            <p class="chart-caption">PBI per capita: Perú vs Latinoamérica (2015-2023)</p>
+                        </div>
+                        
+                        <div class="conclusion-box">
+                            <h3>📌 Conclusión Principal:</h3>
+                            <p>Perú es una <strong>"economía paradoja"</strong>: Crece rápido pero desde base baja; distribuye bien (GINI bajo) pero es pobre; es resiliente (COVID) pero vulnerable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: IMPACTO COVID-19 -->
+        <section class="slide" id="slide9" data-section="8">
+            <div class="slide-content">
+                <h1 class="slide-title covid-title">🦠 Impacto COVID-19: Perú fue extremo en ambos sentidos</h1>
+                
+                <div class="covid-layout">
+                    <div class="covid-section">
+                        <h2>Parte 1: Caída más profunda (2020)</h2>
+                        <div class="covid-chart-container">
+                            <img src="user_input_files/grafico_impacto_covid.png" alt="Impacto del COVID-19 en el Crecimiento del PIB (2019 a 2020)" class="chart-image">
+                            <p class="chart-caption">Impacto del COVID-19 en el Crecimiento del PIB (2019 a 2020)</p>
+                        </div>
+                        
+                        <div class="impact-analysis">
+                            <div class="peru-highlight">
+                                <h3>• Perú: -13.2% ⚠️ PEOR QUE TODOS</h3>
+                            </div>
+                            <div class="comparison-list">
+                                <p>• Colombia: -10.4%</p>
+                                <p>• Ecuador: -9.4%</p>
+                                <p>• Argentina: -7.9%</p>
+                                <p>• Chile: -6.8%</p>
+                                <p>• Brasil: -4.5%</p>
+                                <p>• Bolivia: -1.2% (mejor)</p>
+                            </div>
+                            
+                            <div class="why-section">
+                                <h3>¿Por qué Perú tan severo?</h3>
+                                <ul>
+                                    <li>→ Economía muy minera (60% exportaciones)</li>
+                                    <li>→ Alto desempleo informal (vulnerable)</li>
+                                    <li>→ Restricciones MÁS estrictas que región</li>
+                                    <li>→ Sectores golpeados: minería, turismo, pesca</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="covid-section">
+                        <h2>Parte 2: Recuperación más rápida (2021)</h2>
+                        <div class="covid-chart-container">
+                            <img src="user_input_files/grafico_pre_post_covid.png" alt="Perú: Indicadores Pre-COVID vs Post-COVID" class="chart-image">
+                            <p class="chart-caption">Perú: Indicadores Pre-COVID vs Post-COVID</p>
+                        </div>
+                        
+                        <div class="recovery-analysis-new">
+                            <div class="indicators-block">
+                                <h3>5 Indicadores Comparados:</h3>
+                                <div class="indicators-comparison">
+                                    <p>1. PIB per cápita: $6,640 → $7,619 (+14.8%)</p>
+                                    <p>2. Crecimiento PIB: 3.2% → 1.2% (moderación)</p>
+                                    <p>3. Esperanza de vida: 76.0 → 77.3 años (+1.3)</p>
+                                    <p>4. Internet: 50.4% → 77.1% (+26.7 pp)</p>
+                                    <p>5. Agricultura % PIB: 6.9% → 7.2% (+0.3 pp)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="why-section">
+                                <h3>¿Por qué recuperación rápida?</h3>
+                                <ul>
+                                    <li>→ Efecto "base baja" (cayó mucho, rebota rápido)</li>
+                                    <li>→ Demanda reprimida explota</li>
+                                    <li>→ Precios de cobre históricos</li>
+                                    <li>→ Reapertura rápida de minería</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="synthesis-box">
+                    <h2>Síntesis Ejecutiva:</h2>
+                    <div class="synthesis-content">
+                        <h3>PERÚ ES: Resiliente pero Vulnerable</h3>
+                        <ul>
+                            <li>• Golpe fue el PEOR de la región (-13.2%)</li>
+                            <li>• Pero rebote fue uno de los MEJORES (+24.3% en 2021)</li>
+                            <li>• Estructura económica volátil</li>
+                            <li>• Sectores extractivos dominan los ciclos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: INSIGHTS (Hallazgos Clave) -->
+        <section class="slide" id="slide10" data-section="9">
+            <div class="slide-content">
+                <h1 class="slide-title">💡 Insights Principales del Análisis - 5 Descubrimientos</h1>
+                
+                <div class="insights-layout">
+                    <div class="insight-card">
+                        <h3>INSIGHT 1: Paradoja Económica</h3>
+                        <p>Perú es pobre en ingresos (PIB p/c: 4°)</p>
+                        <p><strong>PERO</strong> crece rápido (2° en crecimiento)</p>
+                        <p><strong>Y</strong> distribuye bien (1° en equidad GINI)</p>
+                        <div class="insight-conclusion">➜ Economía dinámica pero con base baja</div>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3>INSIGHT 2: Convergencia Regional en Marcha</h3>
+                        <div class="insight-chart">
+                            <img src="user_input_files/grafico_ranking_peru.png" alt="Posición de Perú en cada Indicador" class="chart-image-small">
+                            <p class="chart-caption">Posición de Perú en cada Indicador</p>
+                        </div>
+                        <p>2015: Mayor dispersión entre países (divergencia)</p>
+                        <p>2023: Dispersión más baja (convergencia)</p>
+                        <p>Tendencia: Todos crecen hacia arriba</p>
+                        <div class="insight-conclusion">➜ Latinoamérica se homogeneiza gradualmente</div>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3>INSIGHT 3: COVID-19 reveló, no creó</h3>
+                        <p>Ranking pre-COVID ≈ Ranking post-COVID</p>
+                        <p>Países fuertes se mantuvieron fuertes</p>
+                        <p>Débiles siguieron débiles</p>
+                        <div class="insight-conclusion">➜ Estructuras fundamentales resilientes</div>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3>INSIGHT 4: Correlación Perfecta PIB + Salud</h3>
+                        <div class="insight-chart">
+                            <img src="user_input_files/grafico_correlacion.png" alt="Matriz de Correlación entre Indicadores" class="chart-image-small">
+                            <p class="chart-caption">Matriz de Correlación entre Indicadores</p>
+                        </div>
+                        <p>PIB per cápita ↔ Esperanza de vida: +0.70 (muy fuerte) ✅</p>
+                        <p>PIB per cápita ↔ Internet: +0.74 (muy fuerte) ✅</p>
+                        <div class="insight-conclusion">➜ Ingresos = Acceso a salud, nutrición, tecnología</div>
+                        <div class="insight-conclusion">➜ Relación es causal, no coincidencia</div>
+                    </div>
+
+                    <div class="insight-card">
+                        <h3>INSIGHT 5: Perú Líder en Equidad Social</h3>
+                        <p>GINI Perú: 40.7 (MEJOR de región)</p>
+                        <p><strong>Significa:</strong> Ingresos mejor distribuidos</p>
+                        <p>Otros países son más ricos pero más desiguales</p>
+                        
+                        <div class="gini-comparison">
+                            <p>• Perú GINI: 40.7 ✅ (más igualitario)</p>
+                            <p>• Brasil GINI: 53.9 (más desigual)</p>
+                            <p>• Colombia GINI: 51.3 (más desigual)</p>
+                        </div>
+                        
+                        <div class="insight-conclusion">➜ Políticas sociales peruanas funcionan bien</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: METODOLOGÍA -->
+        <section class="slide" id="slide11" data-section="10">
+            <div class="slide-content">
+                <h1 class="slide-title">📐 Metodología: Proceso Científico del Proyecto</h1>
+                
+                <div class="methodology-flow">
+                    <div class="flow-container">
+                        <div class="phase-flow">
+                            <div class="phase-step">
+                                <div class="phase-number">ETAPA 1</div>
+                                <div class="phase-title">DISEÑO</div>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="phase-step">
+                                <div class="phase-number">ETAPA 2</div>
+                                <div class="phase-title">EXTRACCIÓN</div>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="phase-step">
+                                <div class="phase-number">ETAPA 3</div>
+                                <div class="phase-title">LIMPIEZA</div>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="phase-step">
+                                <div class="phase-number">ETAPA 4</div>
+                                <div class="phase-title">ANÁLISIS</div>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="phase-step">
+                                <div class="phase-number">ETAPA 5</div>
+                                <div class="phase-title">VISUALIZ.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-details">
+                    <div class="method-card">
+                        <h3>ETAPA 1: DISEÑO DE INVESTIGACIÓN</h3>
+                        <ul>
+                            <li>Seleccionar 7 países latinoamericanos</li>
+                            <li>Elegir 8 indicadores representativos</li>
+                            <li>Definir período: 2015-2023 (9 años)</li>
+                            <li>Justificación: Período incluye COVID (evento histórico)</li>
+                        </ul>
+                        <div class="result">Resultado: Diseño maestro validado ✅</div>
+                    </div>
+
+                    <div class="method-card">
+                        <h3>ETAPA 2: EXTRACCIÓN DE DATOS</h3>
+                        <ul>
+                            <li>Herramienta: World Bank Open Data API</li>
+                            <li>Método: Requests HTTP + Python 3.8+</li>
+                            <li>Proceso: Automatización con loops</li>
+                            <li>Validación: 504 puntos de datos extraídos</li>
+                        </ul>
+                        <div class="result">Resultado: Dataset bruto completo ✅</div>
+                    </div>
+
+                    <div class="method-card">
+                        <h3>ETAPA 3: LIMPIEZA (Data Cleaning)</h3>
+                        <ul>
+                            <li>Detección: 23 valores nulos (4.5%)</li>
+                            <li>Solución: Forward fill + backward fill</li>
+                            <li>Validación: Cross-check con fuentes oficiales</li>
+                            <li>Software: Pandas, Numpy</li>
+                        </ul>
+                        <div class="result">Resultado: Dataset 100% completo ✅</div>
+                    </div>
+
+                    <div class="method-card">
+                        <h3>ETAPA 4: ANÁLISIS ESTADÍSTICO</h3>
+                        <ul>
+                            <li>Descriptiva: media, mediana, desv estándar</li>
+                            <li>Comparativa: ranking, diferencias percentiles</li>
+                            <li>Correlación: Matriz Pearson</li>
+                            <li>Series temporales: Tendencias ARIMA</li>
+                            <li>Software: Scipy, Sklearn</li>
+                        </ul>
+                        <div class="result">Resultado: Insights generados ✅</div>
+                    </div>
+
+                    <div class="method-card">
+                        <h3>ETAPA 5: VISUALIZACIÓN</h3>
+                        <ul>
+                            <li>Gráficos: 9 visualizaciones profesionales</li>
+                            <li>Tipos: barras, líneas, boxplot, heatmap, scatter</li>
+                            <li>Herramienta: Matplotlib, Seaborn</li>
+                            <li>Formato: PNG 1920x1080 (alta resolución)</li>
+                        </ul>
+                        <div class="result">Resultado: Dashboard visual completo ✅</div>
+                    </div>
+                </div>
+
+                <div class="limitations-section">
+                    <h3>Limitaciones del Estudio:</h3>
+                    <div class="limitations-grid">
+                        <div class="limitation-card">
+                            <h4>⚠️ LIMITACIÓN 1: Datos oficiales pueden tener rezago</h4>
+                            <p>Algunos indicadores se actualizan años después<br>
+                            Proyecciones 2024-2026 tienen incertidumbre</p>
+                        </div>
+                        <div class="limitation-card">
+                            <h4>⚠️ LIMITACIÓN 2: Indicadores no capturan economía informal</h4>
+                            <p>50% del empleo es informal en Perú<br>
+                            Datos laborales pueden subestimar actividad real</p>
+                        </div>
+                        <div class="limitation-card">
+                            <h4>⚠️ LIMITACIÓN 3: Ciclo COVID fue extraordinario</h4>
+                            <p>No es modelo predictivo de situaciones normales<br>
+                            Contexto único (pandemia, confinamiento)</p>
+                        </div>
+                        <div class="limitation-card">
+                            <h4>⚠️ LIMITACIÓN 4: Correlación ≠ Causalidad</h4>
+                            <p>PIB correlaciona con esperanza de vida<br>
+                            Pero no prueba que PIB CAUSA mayor longevidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="validations-section">
+                    <h3>Validaciones Implementadas:</h3>
+                    <div class="validations-grid">
+                        <div class="validation-item">✅ Validación 1: Rango de valores razonables</div>
+                        <div class="validation-item">✅ Validación 2: Series temporales sin discontinuidades</div>
+                        <div class="validation-item">✅ Validación 3: Cross-checking con INEI, BCR</div>
+                        <div class="validation-item">✅ Validación 4: Consistencia entre indicadores relacionados</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12: RESULTADOS FINALES -->
+        <section class="slide" id="slide12" data-section="11">
+            <div class="slide-content">
+                <h1 class="slide-title">✅ Resultados Finales y Conclusiones</h1>
+                
+                <div class="results-layout">
+                    <div class="result-section">
+                        <h2>Resultado 1: Distribución del PIB por País</h2>
+                        <div class="chart-container-large">
+                            <img src="user_input_files/grafico_boxplot_pbi.png" alt="Distribución del PBI per capita por País (2015-2023)" class="chart-image">
+                            <p class="chart-caption">Distribución del PBI per capita por País (2015-2023)</p>
+                        </div>
+                        <div class="result-interpretation">
+                            <p><strong>INTERPRETACIÓN:</strong></p>
+                            <ul>
+                                <li>✓ Chile más consistentemente rico</li>
+                                <li>✓ Argentina más volátil (box grande)</li>
+                                <li>✓ Perú en medio: estable pero bajo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <h2>Resultado 2: Mejora Absoluta en PIB (2015-2023)</h2>
+                        <div class="chart-container-large">
+                            <img src="user_input_files/grafico_mejora_pbi.png" alt="Cambio en PBI per capita (2015-2023)" class="chart-image">
+                            <p class="chart-caption">Cambio en PBI per capita (2015-2023)</p>
+                        </div>
+                        <div class="result-interpretation">
+                            <p><strong>Ranking de crecimiento porcentual:</strong></p>
+                            <div class="ranking-growth">
+                                <p>1. 🥇 Bolivia: +42.7% (+$1,200 USD/año promedio)</p>
+                                <p>2. 🥈 Perú: +26.6% (+$156 USD/año promedio)</p>
+                                <p>3. 🥉 Chile: +27.0% (+$332 USD/año promedio)</p>
+                                <p>4. Colombia: +12.0%</p>
+                                <p>5. Ecuador: +12.7%</p>
+                                <p>6. Brasil: +16.1%</p>
+                                <p>7. Argentina: +4.3% (estancamiento)</p>
+                            </div>
+                            <p><strong>INTERPRETACIÓN:</strong></p>
+                            <ul>
+                                <li>✓ Perú crece en % pero desde base baja</li>
+                                <li>✓ Cada año suma ~$156 USD per cápita</li>
+                                <li>✓ En 9 años: acumulación de $1,980 USD</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <h2>Resultado 3: Proyección al Futuro (2024-2026) ⭐ ESTRELLA</h2>
+                        <div class="chart-container-large">
+                            <img src="user_input_files/grafico_proyeccion_peru.png" alt="Perú: PBI per capita - Histórico y Proyección" class="chart-image">
+                            <p class="chart-caption">Perú: PBI per capita - Histórico y Proyección</p>
+                        </div>
+                        <div class="projection-details">
+                            <div class="projection-section">
+                                <h4>LÍNEA ROJA (Datos reales 2015-2023):</h4>
+                                <p>2015: $6,252 → 2020: $6,180 (caída COVID)</p>
+                                <p>2021: $7,286 (rebote COVID) → 2023: $7,887</p>
+                            </div>
+                            <div class="projection-section">
+                                <h4>LÍNEA AZUL (Proyección 2024-2026):</h4>
+                                <p>2024: $7,650 (estimado)</p>
+                                <p>2025: $7,750 (tendencia)</p>
+                                <p>2026: $7,850 (con IC al 95%)</p>
+                            </div>
+                            <div class="projection-section">
+                                <h4>LÍNEA GRIS (Tendencia lineal):</h4>
+                                <p>Pendiente: ~$105 USD/año</p>
+                                <p>R²: 0.87 (buen ajuste)</p>
+                            </div>
+                            <p><strong>INTERPRETACIÓN:</strong></p>
+                            <ul>
+                                <li>✓ Trayectoria positiva pero moderada</li>
+                                <li>✓ Volatilidad disminuyendo post-COVID</li>
+                                <li>✓ Proyección conservadora (estable)</li>
+                                <li>✓ Si nuevos shocks: puede cambiar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="executive-conclusion">
+                    <h1>Conclusión Ejecutiva - 360°</h1>
+                    
+                    <div class="swot-analysis">
+                        <div class="swot-section strengths">
+                            <h3>1. FORTALEZAS:</h3>
+                            <ul>
+                                <li>✅ Equidad social (GINI 40.7 - mejor de región)</li>
+                                <li>✅ Esperanza de vida creciente (77.74 años)</li>
+                                <li>✅ Tasa de crecimiento dinámico (+26.6% en 9 años)</li>
+                                <li>✅ Resiliencia ante crisis (rebote COVID rápido)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="swot-section weaknesses">
+                            <h3>2. DEBILIDADES:</h3>
+                            <ul>
+                                <li>❌ PIB per cápita bajo ($7,887) - 4° en región</li>
+                                <li>❌ Desempleo moderado-alto (8.2%)</li>
+                                <li>❌ Dependencia de minería (vulnerable a shocks)</li>
+                                <li>❌ Economía informal elevada (difícil de capturar)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="swot-section opportunities">
+                            <h3>3. OPORTUNIDADES:</h3>
+                            <ul>
+                                <li>🎯 Diversificación económica (no solo minería)</li>
+                                <li>🎯 Atracción de inversión extranjera</li>
+                                <li>🎯 Desarrollo tecnológico (Internet pasó 50% → 77%)</li>
+                                <li>🎯 Mayor integración regional (convergencia)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="swot-section threats">
+                            <h3>4. RIESGOS:</h3>
+                            <ul>
+                                <li>⚠️ Crisis política / Inestabilidad institucional</li>
+                                <li>⚠️ Ciclos de precios de commodities</li>
+                                <li>⚠️ Pandemia / Shocks externos</li>
+                                <li>⚠️ Inflación / Tipos de cambio</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="final-message">
+                        <h2>Mensaje Final:</h2>
+                        <blockquote>
+                            "Perú es una economía en <strong>TRANSICIÓN</strong>: crece con velocidad, pero desde base baja; es equitativa, pero pobre; es resiliente, pero frágil. El desafío es <strong>SOSTENER</strong> el crecimiento mediante diversificación y estabilidad macroeconómica, para que la mejora sea <strong>INCLUSIVA</strong> y <strong>PERMANENTE</strong>."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
