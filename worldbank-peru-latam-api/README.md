@@ -152,7 +152,7 @@ jupyter notebook notebook/WorldBank_Peru_Latam_v3.ipynb
 
 - **Curso:** Lenguaje de Programación 2 (2025-2)
 - **Universidad:** Universidad Nacional Agraria La Molina (UNALM)
-- **Escuela:** Estadística e Informática
+- **Departamento:** Estadística Informática
 - **Fecha:** Diciembre 2025
 
 ## 📚 Referencias
