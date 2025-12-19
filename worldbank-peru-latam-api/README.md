@@ -164,7 +164,3 @@ jupyter notebook notebook/WorldBank_Peru_Latam_v3.ipynb
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-⭐ **Si este proyecto te fue útil, considera darle una estrella al repositorio.**
