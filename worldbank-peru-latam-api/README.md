@@ -164,3 +164,8 @@ jupyter notebook notebook/WorldBank_Peru_Latam_v3.ipynb
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## Aclaración importante sobre los commits:
+Durante el desarrollo, trabajamos de forma presencial en la BAN para optimizar la coordinación. Sin embargo, varios integrantes tuvieron inconvenientes técnicos con Visual Studio Code (errores de configuración y dependencias) que impidieron subir cambios desde sus cuentas. Para garantizar la entrega a tiempo y evitar conflictos, decidimos centralizar los commits en mi repositorio. Todos los integrantes participamos activamente en el diseño, código y pruebas, como respaldan nuestros avances en las sesiones presenciales.
+
+Lamento no haber consultado esto antes y también no lo indico al inicio uu.
